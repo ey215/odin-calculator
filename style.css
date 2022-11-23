@@ -31,6 +31,12 @@ button {
     flex-wrap: wrap;
 }
 
+.right {
+    display: flex;
+    width: 25%;
+    flex-direction: column;
+}
+
 .plus {
     height: 100px;
 }
