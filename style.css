@@ -1,3 +1,4 @@
+
 button {
     height: 50px;
     width: 33.3%;
@@ -8,8 +9,9 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 5px solid #000000;
+    border: 3px solid #000000;
     background-color: #a6a0a0;
+    width: 300px;
 }
 
 .display {
