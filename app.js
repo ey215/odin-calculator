@@ -4,8 +4,10 @@ const add = (a, b) => a + b;
 const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;
 const divide = (a, b) => a / b;
+let displayValue = 0;
+let total = 0;
 
-//functin that take operator and two numbers and
+//function that take operator and two numbers and
 //preforms a arithmetic function on the nubers based on the operator
 
 function operate(operator, num1, num2) {
