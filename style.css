@@ -16,6 +16,7 @@ button {
     font-size: 60px;
     background-color: #ffffff;
     width: 300px;
+    text-align: right;
 }
 
 .buttons {
