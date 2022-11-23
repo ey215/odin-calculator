@@ -24,3 +24,7 @@ button {
     width: 300px;
     flex-wrap: wrap;
 }
+
+.plus {
+    height: 100px;
+}
