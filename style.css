@@ -16,3 +16,9 @@ button {
     font-size: 60px;
     background-color: #ffffff;
 }
+
+.buttons {
+    display: flex;
+    width: 200px;
+    flex-wrap: wrap;
+}
