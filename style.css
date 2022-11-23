@@ -15,10 +15,11 @@ button {
 .display {
     font-size: 60px;
     background-color: #ffffff;
+    width: 300px;
 }
 
 .buttons {
     display: flex;
-    width: 200px;
+    width: 300px;
     flex-wrap: wrap;
 }
