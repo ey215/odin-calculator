@@ -1,6 +1,6 @@
 button {
     height: 50px;
-    width: 25%;
+    width: 33.3%;
     font-size: 20px;
 }
 
@@ -22,6 +22,12 @@ button {
 .buttons {
     display: flex;
     width: 300px;
+    flex-wrap: wrap;
+}
+
+.numberBox {
+    display: flex;
+    width: 75%;
     flex-wrap: wrap;
 }
 
