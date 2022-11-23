@@ -1,3 +1,7 @@
+body {
+    display: flex;
+    justify-content: center;
+}
 
 button {
     height: 50px;
