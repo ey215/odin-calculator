@@ -11,3 +11,8 @@ button {
     border: 5px solid #000000;
     background-color: #a6a0a0;
 }
+
+.display {
+    font-size: 60px;
+    background-color: #ffffff;
+}
