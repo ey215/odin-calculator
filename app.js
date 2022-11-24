@@ -99,3 +99,8 @@ document.getElementById("/").addEventListener("click", function () {
   performCalc("/", displayValue);
   changeDisplay(calc[1]);
 });
+
+document.getElementById("=").addEventListener("click", function () {
+  performCalc("=", displayValue);
+  changeDisplay(calc[1]);
+});
