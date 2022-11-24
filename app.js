@@ -6,7 +6,7 @@ const multiply = (a, b) => a * b;
 const divide = (a, b) => a / b;
 let displayValue = "";
 let total = 0;
-const calc = ["", 0, 0];
+const calc = ["+", 0, 0];
 
 //function that take operator and two numbers and
 //preforms a arithmetic function on the nubers based on the operator
@@ -38,12 +38,12 @@ function changeDisplay(number) {
   display.innerHTML = number;
 }
 function performCalc(operator, num) {
-  calc[0] = operator;
   calc[2] = Number(num);
-  console.log(typeof calc[1]);
-  console.log(typeof calc[2]);
-  operate(calc[0], calc[1], calc[2]);
-  calc[1] = calc[1] + calc[2];
+  calc[1] = operate(calc[0], calc[1], calc[2]);
+  console.log(calc[0]);
+  calc[0] = operator;
+  console.log(calc[0]);
+  console.log(calc);
   displayValue = "";
 }
 
@@ -84,5 +84,10 @@ document.getElementById("9").addEventListener("click", function () {
 
 document.getElementById("+").addEventListener("click", function () {
   performCalc("+", displayValue);
+  changeDisplay(calc[1]);
+});
+
+document.getElementById("-").addEventListener("click", function () {
+  performCalc("-", displayValue);
   changeDisplay(calc[1]);
 });
