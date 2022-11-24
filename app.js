@@ -5,7 +5,6 @@ const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;
 const divide = (a, b) => a / b;
 let displayValue = "";
-let total = 0;
 const calc = ["+", 0, 0];
 
 //function that take operator and two numbers and
@@ -55,6 +54,14 @@ function performCalc(operator, num) {
     console.log(calc);
     displayValue = "";
   }
+}
+
+function clearAll() {
+  calc[0] = "+";
+  calc[1] = 0;
+  calc[2] = 0;
+  displayValue = "";
+  changeDisplay(calc[1]);
 }
 
 //Add event listenters to numbers for button presses
