@@ -25,10 +25,12 @@ function operate(operator, num1, num2) {
 //function to populate display when number button is pressed
 
 function makeDisplay(num) {
-  displayValue = displayValue + num;
-  const display = document.getElementById("display");
-  display.innerHTML = "";
-  display.innerHTML = displayValue;
+  if (displayValue.length < 10) {
+    displayValue = displayValue + num;
+    const display = document.getElementById("display");
+    display.innerHTML = "";
+    display.innerHTML = displayValue;
+  }
 }
 
 //Add event listenters to numbers for button presses
