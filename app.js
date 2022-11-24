@@ -37,6 +37,15 @@ function changeDisplay(number) {
   display.innerHTML = "";
   display.innerHTML = number;
 }
+function performCalc(operator, num) {
+  calc[0] = operator;
+  calc[2] = Number(num);
+  console.log(typeof calc[1]);
+  console.log(typeof calc[2]);
+  operate(calc[0], calc[1], calc[2]);
+  calc[1] = calc[1] + calc[2];
+  displayValue = "";
+}
 
 //Add event listenters to numbers for button presses
 
@@ -74,12 +83,6 @@ document.getElementById("9").addEventListener("click", function () {
 //add operator button functionality
 
 document.getElementById("+").addEventListener("click", function () {
-  calc[0] = "+";
-  calc[2] = Number(displayValue);
-  console.log(typeof calc[1]);
-  console.log(typeof calc[2]);
-  operate(calc[0], calc[1], calc[2]);
-  calc[1] = calc[1] + calc[2];
-  displayValue = "";
+  performCalc("+", displayValue);
   changeDisplay(calc[1]);
 });
