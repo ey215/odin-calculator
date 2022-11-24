@@ -4,7 +4,7 @@ const add = (a, b) => a + b;
 const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;
 const divide = (a, b) => a / b;
-let displayValue = 0;
+let displayValue = "";
 let total = 0;
 
 //function that take operator and two numbers and
@@ -21,3 +21,13 @@ function operate(operator, num1, num2) {
     return divide(num1, num2);
   }
 }
+
+//function to populate display when number button is pressed
+
+function makeDisplay(num) {
+  diplayValue = displayValue + num;
+  const display = document.getElementById("display");
+  display.innerHTML = displayValue;
+}
+
+//Add event listenters for button presses
