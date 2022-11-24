@@ -40,7 +40,6 @@ function performCalc(operator, num) {
   if (calc[0] === "=") {
     calc[0] = operator;
     calc[1] = Number(num);
-    calc[2] = 0;
     calc[2] = Number(num);
     console.log(calc);
     changeDisplay(calc[1]);
