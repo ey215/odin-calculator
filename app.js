@@ -31,4 +31,8 @@ function makeDisplay(num) {
   display.innerHTML = displayValue;
 }
 
-//Add event listenters for button presses
+//Add event listenters to numbers for button presses
+
+document.getElementById("1").addEventListener("click", function () {
+  makeDisplay("1");
+});
