@@ -28,10 +28,14 @@ function operate(operator, num1, num2) {
 function makeDisplay(num) {
   if (displayValue.length < 10) {
     displayValue = displayValue + num;
-    const display = document.getElementById("display");
-    display.innerHTML = "";
-    display.innerHTML = displayValue;
+    changeDisplay(displayValue);
   }
+}
+
+function changeDisplay(number) {
+  const display = document.getElementById("display");
+  display.innerHTML = "";
+  display.innerHTML = number;
 }
 
 //Add event listenters to numbers for button presses
@@ -77,7 +81,5 @@ document.getElementById("+").addEventListener("click", function () {
   operate(calc[0], calc[1], calc[2]);
   calc[1] = calc[1] + calc[2];
   displayValue = "";
-  const display = document.getElementById("display");
-  display.innerHTML = "";
-  display.innerHTML = calc[1];
+  changeDisplay(calc[1]);
 });
