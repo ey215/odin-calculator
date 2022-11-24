@@ -38,13 +38,23 @@ function changeDisplay(number) {
   display.innerHTML = number;
 }
 function performCalc(operator, num) {
-  calc[2] = Number(num);
-  calc[1] = operate(calc[0], calc[1], calc[2]);
-  console.log(calc[0]);
-  calc[0] = operator;
-  console.log(calc[0]);
-  console.log(calc);
-  displayValue = "";
+  if (calc[0] === "=") {
+    calc[0] = operator;
+    calc[1] = num;
+    calc[2] = 0;
+    calc[2] = Number(num);
+    console.log(calc);
+    changeDisplay(calc[1]);
+    displayValue = "";
+  } else {
+    calc[2] = Number(num);
+    calc[1] = operate(calc[0], calc[1], calc[2]);
+    console.log(calc[0]);
+    calc[0] = operator;
+    console.log(calc[0]);
+    console.log(calc);
+    displayValue = "";
+  }
 }
 
 //Add event listenters to numbers for button presses
