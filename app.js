@@ -121,3 +121,8 @@ document.getElementById("=").addEventListener("click", function () {
   performCalc("=", displayValue);
   changeDisplay(calc[1]);
 });
+
+//add AD button functionality
+document.getElementById("AC").addEventListener("click", function () {
+  clearAll();
+});
