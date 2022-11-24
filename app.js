@@ -33,6 +33,33 @@ function makeDisplay(num) {
 
 //Add event listenters to numbers for button presses
 
+document.getElementById("0").addEventListener("click", function () {
+  makeDisplay("0");
+});
 document.getElementById("1").addEventListener("click", function () {
   makeDisplay("1");
+});
+document.getElementById("2").addEventListener("click", function () {
+  makeDisplay("2");
+});
+document.getElementById("3").addEventListener("click", function () {
+  makeDisplay("3");
+});
+document.getElementById("4").addEventListener("click", function () {
+  makeDisplay("4");
+});
+document.getElementById("5").addEventListener("click", function () {
+  makeDisplay("5");
+});
+document.getElementById("6").addEventListener("click", function () {
+  makeDisplay("6");
+});
+document.getElementById("7").addEventListener("click", function () {
+  makeDisplay("7");
+});
+document.getElementById("8").addEventListener("click", function () {
+  makeDisplay("8");
+});
+document.getElementById("9").addEventListener("click", function () {
+  makeDisplay("9");
 });
