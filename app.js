@@ -34,7 +34,14 @@ function makeDisplay(num) {
 function changeDisplay(number) {
   const display = document.getElementById("display");
   display.innerHTML = "";
-  display.innerHTML = number;
+  console.log(number.length);
+  if (number.toString().length > 10 && number % 1 != 0) {
+    display.innerHTML = Math.round(number);
+  } else if (number.length > 9) {
+    display.innerHTML = "ERROR";
+  } else {
+    display.innerHTML = number;
+  }
 }
 function performCalc(operator, num) {
   if (calc[0] === "=") {
