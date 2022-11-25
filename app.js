@@ -185,10 +185,16 @@ document.getElementById("AC").addEventListener("click", function () {
   clearAll();
 });
 
-document.getElementById(".").addEventListener(
-  "click",
-  function () {
-    makeDisplay(".");
-  },
-  { once: true }
-);
+checkDec();
+
+function checkDec() {
+  if (displayValue.includes(".") === false) {
+    document.getElementById(".").addEventListener(
+      "click",
+      function () {
+        makeDisplay(".");
+      },
+      { once: true }
+    );
+  }
+}
