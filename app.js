@@ -185,6 +185,10 @@ document.getElementById("AC").addEventListener("click", function () {
   clearAll();
 });
 
-document.getElementById(".").addEventListener("click", function () {
-  makeDisplay(".");
-});
+document.getElementById(".").addEventListener(
+  "click",
+  function () {
+    makeDisplay(".");
+  },
+  { once: true }
+);
