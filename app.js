@@ -31,6 +31,13 @@ function makeDisplay(num) {
   }
 }
 
+function backspace() {
+  if (displayValue.length > 0) {
+    displayValue = displayValue.substring(0, displayValue.length - 1);
+    changeDisplay(displayValue);
+  }
+}
+
 function changeDisplay(number) {
   const display = document.getElementById("display");
   display.innerHTML = "";
@@ -101,6 +108,10 @@ document.getElementById("8").addEventListener("click", function () {
 });
 document.getElementById("9").addEventListener("click", function () {
   makeDisplay("9");
+});
+
+document.getElementById("BS").addEventListener("click", function () {
+  backspace();
 });
 
 //add operator button functionality
