@@ -119,8 +119,14 @@ document.getElementById("*").addEventListener("click", function () {
   changeDisplay(calc[1]);
 });
 document.getElementById("/").addEventListener("click", function () {
-  performCalc("/", displayValue);
-  changeDisplay(calc[1]);
+  // test for divide by 0 and display error message if true
+
+  if (calc[2] === 0) {
+    alert("Silly kids, you can't divide by 0!");
+  } else {
+    performCalc("/", displayValue);
+    changeDisplay(calc[1]);
+  }
 });
 
 document.getElementById("=").addEventListener("click", function () {
