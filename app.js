@@ -184,3 +184,7 @@ document.getElementById("=").addEventListener("click", function () {
 document.getElementById("AC").addEventListener("click", function () {
   clearAll();
 });
+
+document.getElementById(".").addEventListener("click", function () {
+  makeDisplay(".");
+});
