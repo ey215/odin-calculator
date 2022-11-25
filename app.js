@@ -118,6 +118,9 @@ document.getElementById("+").addEventListener("click", function () {
     performCalc("+", displayValue);
     changeDisplay(calc[1]);
   }
+  document
+    .getElementById(".")
+    .addEventListener("click", addDecimal, { once: true });
 });
 
 document.getElementById("-").addEventListener("click", function () {
@@ -133,6 +136,9 @@ document.getElementById("-").addEventListener("click", function () {
     performCalc("-", displayValue);
     changeDisplay(calc[1]);
   }
+  document
+    .getElementById(".")
+    .addEventListener("click", addDecimal, { once: true });
 });
 document.getElementById("*").addEventListener("click", function () {
   if (calc[0] === "/") {
@@ -147,6 +153,9 @@ document.getElementById("*").addEventListener("click", function () {
     performCalc("*", displayValue);
     changeDisplay(calc[1]);
   }
+  document
+    .getElementById(".")
+    .addEventListener("click", addDecimal, { once: true });
 });
 document.getElementById("/").addEventListener("click", function () {
   // test for divide by 0 and display error message if true
@@ -163,6 +172,9 @@ document.getElementById("/").addEventListener("click", function () {
     performCalc("/", displayValue);
     changeDisplay(calc[1]);
   }
+  document
+    .getElementById(".")
+    .addEventListener("click", addDecimal, { once: true });
 });
 
 document.getElementById("=").addEventListener("click", function () {
@@ -178,11 +190,17 @@ document.getElementById("=").addEventListener("click", function () {
     performCalc("=", displayValue);
     changeDisplay(calc[1]);
   }
+  document
+    .getElementById(".")
+    .addEventListener("click", addDecimal, { once: true });
 });
 
 //add AC button functionality
 document.getElementById("AC").addEventListener("click", function () {
   clearAll();
+  document
+    .getElementById(".")
+    .addEventListener("click", addDecimal, { once: true });
 });
 
 function addDecimal() {
