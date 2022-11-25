@@ -106,29 +106,81 @@ document.getElementById("9").addEventListener("click", function () {
 //add operator button functionality
 
 document.getElementById("+").addEventListener("click", function () {
-  performCalc("+", displayValue);
-  changeDisplay(calc[1]);
+  if (calc[0] === "/") {
+    if (displayValue === "" || displayValue === "0") {
+      alert("Silly kids, you can't divide by 0!");
+      clearAll();
+    } else {
+      performCalc("+", displayValue);
+      changeDisplay(calc[1]);
+    }
+  } else {
+    performCalc("+", displayValue);
+    changeDisplay(calc[1]);
+  }
 });
 
 document.getElementById("-").addEventListener("click", function () {
-  performCalc("-", displayValue);
-  changeDisplay(calc[1]);
+  if (calc[0] === "/") {
+    if (displayValue === "" || displayValue === "0") {
+      alert("Silly kids, you can't divide by 0!");
+      clearAll();
+    } else {
+      performCalc("-", displayValue);
+      changeDisplay(calc[1]);
+    }
+  } else {
+    performCalc("-", displayValue);
+    changeDisplay(calc[1]);
+  }
 });
 document.getElementById("*").addEventListener("click", function () {
-  performCalc("*", displayValue);
-  changeDisplay(calc[1]);
+  if (calc[0] === "/") {
+    if (displayValue === "" || displayValue === "0") {
+      alert("Silly kids, you can't divide by 0!");
+      clearAll();
+    } else {
+      performCalc("*", displayValue);
+      changeDisplay(calc[1]);
+    }
+  } else {
+    performCalc("*", displayValue);
+    changeDisplay(calc[1]);
+  }
 });
 document.getElementById("/").addEventListener("click", function () {
-  performCalc("/", displayValue);
-  changeDisplay(calc[1]);
+  // test for divide by 0 and display error message if true
+
+  if (calc[0] === "/") {
+    if (displayValue === "" || displayValue === "0") {
+      alert("Silly kids, you can't divide by 0!");
+      clearAll();
+    } else {
+      performCalc("/", displayValue);
+      changeDisplay(calc[1]);
+    }
+  } else {
+    performCalc("/", displayValue);
+    changeDisplay(calc[1]);
+  }
 });
 
 document.getElementById("=").addEventListener("click", function () {
-  performCalc("=", displayValue);
-  changeDisplay(calc[1]);
+  if (calc[0] === "/") {
+    if (displayValue === "" || displayValue === "0") {
+      alert("Silly kids, you can't divide by 0!");
+      clearAll();
+    } else {
+      performCalc("=", displayValue);
+      changeDisplay(calc[1]);
+    }
+  } else {
+    performCalc("=", displayValue);
+    changeDisplay(calc[1]);
+  }
 });
 
-//add AD button functionality
+//add AC button functionality
 document.getElementById("AC").addEventListener("click", function () {
   clearAll();
 });
