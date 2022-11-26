@@ -5,7 +5,7 @@ const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;
 const divide = (a, b) => a / b;
 let displayValue = "";
-const calc = ["+", 0, 0];
+const calc = ["+", 0, 0, false];
 
 //function that take operator and two numbers and
 //preforms a arithmetic function on the nubers based on the operator
@@ -55,14 +55,14 @@ function performCalc(operator, num) {
     calc[0] = operator;
     calc[1] = Number(num);
     calc[2] = Number(num);
-    console.log(calc);
+    calc[3] = false;
     changeDisplay(calc[1]);
     displayValue = "";
   } else {
     calc[2] = Number(num);
     calc[1] = operate(calc[0], calc[1], calc[2]);
-    console.log(calc[0]);
     calc[0] = operator;
+    calc[3] = false;
     console.log(calc[0]);
     console.log(calc);
     displayValue = "";
@@ -73,6 +73,7 @@ function clearAll() {
   calc[0] = "+";
   calc[1] = 0;
   calc[2] = 0;
+  calc[3] = false;
   displayValue = "";
   changeDisplay(calc[1]);
 }
@@ -129,9 +130,7 @@ document.getElementById("+").addEventListener("click", function () {
     performCalc("+", displayValue);
     changeDisplay(calc[1]);
   }
-  document
-    .getElementById(".")
-    .addEventListener("click", addDecimal, { once: true });
+  document.getElementById(".");
 });
 
 document.getElementById("-").addEventListener("click", function () {
@@ -147,9 +146,7 @@ document.getElementById("-").addEventListener("click", function () {
     performCalc("-", displayValue);
     changeDisplay(calc[1]);
   }
-  document
-    .getElementById(".")
-    .addEventListener("click", addDecimal, { once: true });
+  document.getElementById(".");
 });
 document.getElementById("*").addEventListener("click", function () {
   if (calc[0] === "/") {
@@ -164,9 +161,7 @@ document.getElementById("*").addEventListener("click", function () {
     performCalc("*", displayValue);
     changeDisplay(calc[1]);
   }
-  document
-    .getElementById(".")
-    .addEventListener("click", addDecimal, { once: true });
+  document.getElementById(".");
 });
 document.getElementById("/").addEventListener("click", function () {
   // test for divide by 0 and display error message if true
@@ -183,9 +178,7 @@ document.getElementById("/").addEventListener("click", function () {
     performCalc("/", displayValue);
     changeDisplay(calc[1]);
   }
-  document
-    .getElementById(".")
-    .addEventListener("click", addDecimal, { once: true });
+  document.getElementById(".");
 });
 
 document.getElementById("=").addEventListener("click", function () {
@@ -201,26 +194,24 @@ document.getElementById("=").addEventListener("click", function () {
     performCalc("=", displayValue);
     changeDisplay(calc[1]);
   }
-  document
-    .getElementById(".")
-    .addEventListener("click", addDecimal, { once: true });
 });
 
 //add AC button functionality
 document.getElementById("AC").addEventListener("click", function () {
   clearAll();
-  document
-    .getElementById(".")
-    .addEventListener("click", addDecimal, { once: true });
 });
 
 function addDecimal() {
-  makeDisplay(".");
+  const screen = document.getElementById("display");
+  const screenContent = screen.innerHTML;
+  if (screenContent.includes(".") && calc[3] === true) {
+  } else {
+    calc[3] = true;
+    makeDisplay(".");
+  }
 }
 
-document
-  .getElementById(".")
-  .addEventListener("click", addDecimal, { once: true });
+document.getElementById(".").addEventListener("click", addDecimal);
 
 document.addEventListener("keypress", (event) => {
   console.log(event);
@@ -267,9 +258,6 @@ document.addEventListener("keypress", (event) => {
       performCalc("+", displayValue);
       changeDisplay(calc[1]);
     }
-    document
-      .getElementById(".")
-      .addEventListener("click", addDecimal, { once: true });
   }
   if (event.key === "-") {
     if (calc[0] === "/") {
@@ -284,9 +272,6 @@ document.addEventListener("keypress", (event) => {
       performCalc("-", displayValue);
       changeDisplay(calc[1]);
     }
-    document
-      .getElementById(".")
-      .addEventListener("click", addDecimal, { once: true });
   }
   if (event.key === "*") {
     if (calc[0] === "/") {
@@ -301,9 +286,6 @@ document.addEventListener("keypress", (event) => {
       performCalc("*", displayValue);
       changeDisplay(calc[1]);
     }
-    document
-      .getElementById(".")
-      .addEventListener("click", addDecimal, { once: true });
   }
   if (event.code === "NumpadDivide" || event.code === "Slash") {
     if (calc[0] === "/") {
@@ -318,9 +300,6 @@ document.addEventListener("keypress", (event) => {
       performCalc("/", displayValue);
       changeDisplay(calc[1]);
     }
-    document
-      .getElementById(".")
-      .addEventListener("click", addDecimal, { once: true });
   }
   if (event.key === "=" || event.key === "Enter") {
     if (calc[0] === "/") {
@@ -335,17 +314,9 @@ document.addEventListener("keypress", (event) => {
       performCalc("=", displayValue);
       changeDisplay(calc[1]);
     }
-    document
-      .getElementById(".")
-      .addEventListener("click", addDecimal, { once: true });
   }
   if (event.key === ".") {
-    const screen = document.getElementById("display");
-    const screenContent = screen.innerHTML;
-    if (screenContent.includes(".")) {
-    } else {
-      addDecimal();
-    }
+    addDecimal();
   }
   if (event.key === "Delete") {
     clearAll();
