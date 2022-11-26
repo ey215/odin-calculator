@@ -245,7 +245,7 @@ document.addEventListener("keypress", (event) => {
   if (event.key === "0") {
     makeDisplay("0");
   }
-  if (event.key === "+") {
+  if (event.key === "+" || event.code === "NumpadAdd") {
     if (calc[0] === "/") {
       if (displayValue === "" || displayValue === "0") {
         alert("Silly kids, you can't divide by 0!");
@@ -259,7 +259,7 @@ document.addEventListener("keypress", (event) => {
       changeDisplay(calc[1]);
     }
   }
-  if (event.key === "-") {
+  if (event.key === "-" || event.code === "NumpadSubtract") {
     if (calc[0] === "/") {
       if (displayValue === "" || displayValue === "0") {
         alert("Silly kids, you can't divide by 0!");
@@ -272,8 +272,9 @@ document.addEventListener("keypress", (event) => {
       performCalc("-", displayValue);
       changeDisplay(calc[1]);
     }
+    document.getElementById(".");
   }
-  if (event.key === "*") {
+  if (event.key === "*" || event.code === "NumpadMultiply") {
     if (calc[0] === "/") {
       if (displayValue === "" || displayValue === "0") {
         alert("Silly kids, you can't divide by 0!");
@@ -301,7 +302,11 @@ document.addEventListener("keypress", (event) => {
       changeDisplay(calc[1]);
     }
   }
-  if (event.key === "=" || event.key === "Enter") {
+  if (
+    event.key === "=" ||
+    event.code === "Enter" ||
+    event.code === "NumpadEnter"
+  ) {
     if (calc[0] === "/") {
       if (displayValue === "" || displayValue === "0") {
         alert("Silly kids, you can't divide by 0!");
