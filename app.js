@@ -213,6 +213,13 @@ function addDecimal() {
 
 document.getElementById(".").addEventListener("click", addDecimal);
 
+document.getElementById("C").addEventListener("click", clearDisplay);
+
+function clearDisplay() {
+  displayValue = "";
+  makeDisplay(displayValue);
+}
+
 document.addEventListener("keypress", (event) => {
   console.log(event);
   if (event.key === "1") {
@@ -302,11 +309,7 @@ document.addEventListener("keypress", (event) => {
       changeDisplay(calc[1]);
     }
   }
-  if (
-    event.key === "=" ||
-    event.code === "Enter" ||
-    event.code === "NumpadEnter"
-  ) {
+  if (event.key === "=" || event.code === "NumpadEnter") {
     if (calc[0] === "/") {
       if (displayValue === "" || displayValue === "0") {
         alert("Silly kids, you can't divide by 0!");
