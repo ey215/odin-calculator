@@ -221,3 +221,37 @@ function addDecimal() {
 document
   .getElementById(".")
   .addEventListener("click", addDecimal, { once: true });
+
+document.addEventListener("keypress", (event) => {
+  console.log(event);
+  if (event.key === "1") {
+    makeDisplay("1");
+  }
+  if (event.key === "2") {
+    makeDisplay("2");
+  }
+  if (event.key === "3") {
+    makeDisplay("3");
+  }
+  if (event.key === "4") {
+    makeDisplay("4");
+  }
+  if (event.key === "5") {
+    makeDisplay("5");
+  }
+  if (event.key === "6") {
+    makeDisplay("6");
+  }
+  if (event.key === "7") {
+    makeDisplay("7");
+  }
+  if (event.key === "8") {
+    makeDisplay("8");
+  }
+  if (event.key === "9") {
+    makeDisplay("9");
+  }
+  if (event.key === "0") {
+    makeDisplay("0");
+  }
+});
