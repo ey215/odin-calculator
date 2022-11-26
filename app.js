@@ -339,4 +339,12 @@ document.addEventListener("keypress", (event) => {
       .getElementById(".")
       .addEventListener("click", addDecimal, { once: true });
   }
+  if (event.key === ".") {
+    const screen = document.getElementById("display");
+    const screenContent = screen.innerHTML;
+    if (screenContent.includes(".")) {
+    } else {
+      addDecimal();
+    }
+  }
 });
