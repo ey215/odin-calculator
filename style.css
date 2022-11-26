@@ -22,6 +22,7 @@ button {
     border: 3px solid #FFFFFF;
     background-color: rgba(0,0,0,255);
     width: 300px;
+    padding: 10px;
 }
 
 .display {
@@ -65,16 +66,19 @@ button {
 .operator {
     background-color: rgba(246,153,6,255);
     color: rgba(245,246,245,255);
+    border-color: rgba(246,153,6,255);
 }
 
 .extra, .header, .footer {
     background-color: rgba(159,159,159,255);
-    color: rgba(0,0,0,255)
+    color: rgba(0,0,0,255);
+    border-color: rgba(159,159,159,255)
 }
 
 .number {
     color: rgba(247,247,247,255);
     background-color: rgba(49,49,49,255);
+    border-color: rgba(49,49,49,255);
 }
 
 .header {
