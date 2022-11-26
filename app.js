@@ -347,4 +347,11 @@ document.addEventListener("keypress", (event) => {
       addDecimal();
     }
   }
+  if (event.key === "Delete") {
+    clearAll();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  console.log(event);
 });
