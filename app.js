@@ -254,4 +254,89 @@ document.addEventListener("keypress", (event) => {
   if (event.key === "0") {
     makeDisplay("0");
   }
+  if (event.key === "+") {
+    if (calc[0] === "/") {
+      if (displayValue === "" || displayValue === "0") {
+        alert("Silly kids, you can't divide by 0!");
+        clearAll();
+      } else {
+        performCalc("+", displayValue);
+        changeDisplay(calc[1]);
+      }
+    } else {
+      performCalc("+", displayValue);
+      changeDisplay(calc[1]);
+    }
+    document
+      .getElementById(".")
+      .addEventListener("click", addDecimal, { once: true });
+  }
+  if (event.key === "-") {
+    if (calc[0] === "/") {
+      if (displayValue === "" || displayValue === "0") {
+        alert("Silly kids, you can't divide by 0!");
+        clearAll();
+      } else {
+        performCalc("-", displayValue);
+        changeDisplay(calc[1]);
+      }
+    } else {
+      performCalc("-", displayValue);
+      changeDisplay(calc[1]);
+    }
+    document
+      .getElementById(".")
+      .addEventListener("click", addDecimal, { once: true });
+  }
+  if (event.key === "*") {
+    if (calc[0] === "/") {
+      if (displayValue === "" || displayValue === "0") {
+        alert("Silly kids, you can't divide by 0!");
+        clearAll();
+      } else {
+        performCalc("*", displayValue);
+        changeDisplay(calc[1]);
+      }
+    } else {
+      performCalc("*", displayValue);
+      changeDisplay(calc[1]);
+    }
+    document
+      .getElementById(".")
+      .addEventListener("click", addDecimal, { once: true });
+  }
+  if (event.code === "NumpadDivide" || event.code === "Slash") {
+    if (calc[0] === "/") {
+      if (displayValue === "" || displayValue === "0") {
+        alert("Silly kids, you can't divide by 0!");
+        clearAll();
+      } else {
+        performCalc("/", displayValue);
+        changeDisplay(calc[1]);
+      }
+    } else {
+      performCalc("/", displayValue);
+      changeDisplay(calc[1]);
+    }
+    document
+      .getElementById(".")
+      .addEventListener("click", addDecimal, { once: true });
+  }
+  if (event.key === "=" || event.key === "Enter") {
+    if (calc[0] === "/") {
+      if (displayValue === "" || displayValue === "0") {
+        alert("Silly kids, you can't divide by 0!");
+        clearAll();
+      } else {
+        performCalc("=", displayValue);
+        changeDisplay(calc[1]);
+      }
+    } else {
+      performCalc("=", displayValue);
+      changeDisplay(calc[1]);
+    }
+    document
+      .getElementById(".")
+      .addEventListener("click", addDecimal, { once: true });
+  }
 });
