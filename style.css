@@ -93,4 +93,5 @@ button {
     height: 75px;
     width: 100%;
     margin-top: 200px;
+    flex-direction: column;
 }
